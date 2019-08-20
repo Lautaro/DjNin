@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player_PickUpThings : MonoBehaviour
 {
-    public List<GameObject> InReach;
+    public List<GameObject> RecordsInReach;
     public GameObject Carrying;
     public List<UnloadSurface> SurfaceInReach;
     GameObject Hand;
@@ -12,60 +12,96 @@ public class Player_PickUpThings : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SurfaceInReach = new List<UnloadSurface> ();
-        InReach = new List<GameObject> ();
+        SurfaceInReach = new List<UnloadSurface>();
+        RecordsInReach = new List<GameObject>();
     }
 
-    void OnCollisionEnter2D( Collision2D col )
+    void OnCollisionEnter2D(Collision2D col)
     {
 
 
     }
 
-    void OnTriggerEnter2D( Collider2D col )
+    void OnTriggerEnter2D(Collider2D col)
     {
-        if ( col.gameObject.GetComponent<Carriable>() != null )
+        var carriable = col.gameObject.GetComponent<Carriable>();
+        var surfaceInReach = col.gameObject.GetComponent<UnloadSurface>();
+        if (carriable != null)
         {
-            InReach.Add ( col.gameObject );
-            Debug.Log ( "OnTriggerEnter2D: " + col.gameObject.name );
+            RecordsInReach.Add(col.gameObject);
         }
 
-        if ( col.gameObject.GetComponent<UnloadSurface> () != null )
+        if (surfaceInReach != null)
         {
-         //   SurfacesInReach.Add ( col.gameObject );
-            Debug.Log ( "OnTriggerEnter2D: " + col.gameObject.name );
+            SurfaceInReach.Add(surfaceInReach);
         }
 
     }
-    void OnTriggerExit2D( Collider2D col )
-    {   
-            InReach.Remove ( col.gameObject );
-            Debug.Log ( "OnTriggerExit2D: " + col.gameObject.name );
+    void OnTriggerExit2D(Collider2D col)
+    {
+        var carriable = col.gameObject.GetComponent<Carriable>();
+        var surfaceInReach = col.gameObject.GetComponent<UnloadSurface>();
+        if (carriable != null)
+        {
+            RecordsInReach.Remove(col.gameObject);
+        }
+
+        if (surfaceInReach != null)
+        {
+            SurfaceInReach.Remove(surfaceInReach);
+        }
     }
 
     public void OnPlayerMoving(object facesLeft)
     {
-        if ( Carrying != null )
+        if (Carrying != null)
         {
-            var direction = ( bool )facesLeft == true ? -0.5f: 0.5f;
-            Carrying.transform.position = transform.position + new Vector3 ( direction, 0 );
+            var direction = (bool)facesLeft == true ? -0.5f : 0.5f;
+            Carrying.transform.position = transform.position + new Vector3(direction, 0);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ( Input.anyKeyDown )
+        if (Input.anyKeyDown)
         {
-            if ( Input.GetKeyDown ( KeyCode.Space ) )
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                if ( Carrying != null )
+                if (Carrying != null)
                 {
-                    Carrying = null;
+                    if (SurfaceInReach.Count > 0)
+                    {
+                        var surface = SurfaceInReach[0];
+                        var carriable = Carrying.GetComponent<Carriable>();
+                        var returnObject = surface.Place(carriable);
+                        if (returnObject != null)
+                        {
+                            Carrying = returnObject.gameObject;
+                        }
+                        else
+                        {
+                            Carrying = null;
+                        }
+                    }
+                    else
+                    {
+                        Carrying = null;
+                    }
+
                 }
-                else if(InReach.Count > 0)
+                else if (RecordsInReach.Count > 0 || SurfaceInReach.Count > 0)
                 {
-                    Carrying = InReach[0];
+                    if (SurfaceInReach.Count > 0 && SurfaceInReach[0].PlacedObject != null)
+                    {
+                        var surface = SurfaceInReach[0];
+                        Carrying = surface.Take().gameObject;
+
+                    }
+                    else if (RecordsInReach.Count > 0)
+                    {
+                        Carrying = RecordsInReach[0];
+                    }
                 }
             }
         }
