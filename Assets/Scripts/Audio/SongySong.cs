@@ -172,6 +172,34 @@ public partial class SongySong : MonoBehaviour
         }
     }
 
+    public Dictionary<string, float> GetPlayingTracks()
+    {
+        var clips = GetAllClipsInSongy();
+        var dic = new Dictionary<string, float>();
+        foreach (var clip in clips)
+        {
+            if (clip.source.volume > 0.1)
+            {
+                var volume = clip.source.volume;
+                dic.Add(clip.ClipName, volume);
+            }
+        }
+
+        return dic;
+    }
+
+    public Dictionary<string, float> GetAllClipVolume()
+    {
+        var clips = GetAllClipsInSongy();
+        var dic = new Dictionary<string, float>();
+        foreach (var clip in clips)
+        {
+            var volume = clip.source.volume;
+            dic.Add(clip.ClipName, volume);
+        }
+
+        return dic;
+    }
     public void PlaySongySong()
     {
         if (Intro.HasClip())

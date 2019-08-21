@@ -60,6 +60,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Guest.cs" />
+    <Compile Include="Assets\GuestManager.cs" />
     <Compile Include="Assets\MusicManager.cs" />
     <Compile Include="Assets\Scripts\Audio\SongyPart.cs" />
     <Compile Include="Assets\Scripts\Audio\SongyPartClip.cs" />
