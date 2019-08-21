@@ -1053,8 +1053,8 @@ MonoBehaviour:
   - {fileID: 844830289}
   - {fileID: 1949487590}
   - {fileID: 1714297649}
-  SatisfactionBoost: 0.01
-  SatisfactionDamage: 0.01
+  SatisfactionBoost: 0.03
+  SatisfactionDamage: 0.03
 --- !u!4 &1309424873
 Transform:
   m_ObjectHideFlags: 0
@@ -1111,6 +1111,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guest (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: FavouriteTracks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: WorstTracks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: DislikedTracks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: FavouriteTracks.Array.data[2]
+      value: Chords
+      objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: FavouriteTracks.Array.data[0]
+      value: Pads
+      objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: FavouriteTracks.Array.data[1]
+      value: Arrpegio
+      objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: WorstTracks.Array.data[0]
+      value: BasicBeat
+      objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: Satisfaction
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: WorstTracks.Array.data[1]
+      value: Chords
+      objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: DislikedTracks.Array.data[0]
+      value: Bass
+      objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: DislikedTracks.Array.data[1]
+      value: Chords
+      objectReference: {fileID: 0}
     - target: {fileID: 1754436285812051730, guid: fe35a3ed23fc6b6428e870631cc87443,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1166,38 +1210,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
-      propertyPath: FavouriteTracks.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
-      propertyPath: WorstTracks.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
-      propertyPath: FavouriteTracks.Array.data[2]
-      value: Chords
-      objectReference: {fileID: 0}
-    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
-      propertyPath: FavouriteTracks.Array.data[0]
-      value: Pads
-      objectReference: {fileID: 0}
-    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
-      propertyPath: FavouriteTracks.Array.data[1]
-      value: Arrpegio
-      objectReference: {fileID: 0}
-    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
-      propertyPath: WorstTracks.Array.data[0]
-      value: BasicBeat
-      objectReference: {fileID: 0}
-    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
-      propertyPath: Satisfaction
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
-      propertyPath: WorstTracks.Array.data[1]
-      value: Chords
-      objectReference: {fileID: 0}
     - target: {fileID: 903607383009548303, guid: fe35a3ed23fc6b6428e870631cc87443,
         type: 3}
       propertyPath: m_Mesh
@@ -1224,6 +1236,66 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2589070771097725556, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8127500469013951308, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770646616465232411, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770646616465232411, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770646616465232411, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770646616465232411, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770646616465232411, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615621998135295535, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543336597077023927, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543336597077023927, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543336597077023927, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543336597077023927, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543336597077023927, guid: fe35a3ed23fc6b6428e870631cc87443,
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
@@ -1598,6 +1670,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guest (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: DislikedTracks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: DislikedTracks.Array.data[0]
+      value: Arrpegio
+      objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: FavouriteTracks.Array.data[2]
+      value: ExtraBeat
+      objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: DislikedTracks.Array.data[1]
+      value: BasicBeat
+      objectReference: {fileID: 0}
     - target: {fileID: 1754436285812051730, guid: fe35a3ed23fc6b6428e870631cc87443,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1657,6 +1745,66 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8127500469013951308, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770646616465232411, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770646616465232411, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770646616465232411, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770646616465232411, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5770646616465232411, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615621998135295535, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543336597077023927, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543336597077023927, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543336597077023927, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543336597077023927, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5543336597077023927, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
@@ -1884,6 +2032,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guest (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: DislikedTracks.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: DislikedTracks.Array.data[0]
+      value: Pads
+      objectReference: {fileID: 0}
+    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
+      propertyPath: DislikedTracks.Array.data[1]
+      value: ExtraBeat
+      objectReference: {fileID: 0}
     - target: {fileID: 1754436285812051730, guid: fe35a3ed23fc6b6428e870631cc87443,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1940,6 +2100,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 903607383009548303, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8127500469013951308, guid: fe35a3ed23fc6b6428e870631cc87443,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7615621998135295535, guid: fe35a3ed23fc6b6428e870631cc87443,
         type: 3}
       propertyPath: m_Mesh
       value: 

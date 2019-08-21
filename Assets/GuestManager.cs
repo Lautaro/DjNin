@@ -10,8 +10,12 @@ public class GuestManager : MonoBehaviour
     public List<Guest> Guests;
     public float SatisfactionBoost;
     public float SatisfactionDamage;
+
+  
     void Start() 
     {
+
+
         if (Guests == null)
         {
             Guests = new List<Guest>();
@@ -34,7 +38,7 @@ public class GuestManager : MonoBehaviour
         foreach (var guest in Guests)
         {
             var favouriteTracks = guest.FavouriteTracks;
-            var worstTracks = guest.WorstTracks;
+            var worstTracks = guest.DislikedTracks;
             var satisfactionMod = 0f;
             foreach (var favTrack in favouriteTracks)
             {
@@ -59,7 +63,16 @@ public class GuestManager : MonoBehaviour
 
             guest.Satisfaction += satisfactionMod;
 
-            guest.GetComponentInChildren<TextMeshPro>().text = guest.Satisfaction.ToString("N1");
+            guest.satisfactionUI.text = guest.Satisfaction.ToString("N1");
+            if (satisfactionMod >= 0)
+            {
+                guest.satisfactionUI.color = Color.green;
+            }
+            else
+            {
+                guest.satisfactionUI.color = Color.red;
+            }
+
 
             if (guest.Satisfaction >= 100)
             {
