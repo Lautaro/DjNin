@@ -60,13 +60,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Guest.cs" />
-    <Compile Include="Assets\GuestManager.cs" />
-    <Compile Include="Assets\MusicManager.cs" />
     <Compile Include="Assets\Scripts\Audio\SongyPart.cs" />
     <Compile Include="Assets\Scripts\Audio\SongyPartClip.cs" />
     <Compile Include="Assets\Scripts\Audio\SongySong.cs" />
     <Compile Include="Assets\Scripts\Carriable.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\Guest.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\GuestManager.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\MusicManager.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\SpawnGuest.cs" />
+    <Compile Include="Assets\Scripts\Mechanics\Tracks.cs" />
     <Compile Include="Assets\Scripts\Player\Player_Movement.cs" />
     <Compile Include="Assets\Scripts\Player\Player_PickUpThings.cs" />
     <Compile Include="Assets\Scripts\UnloadSurface.cs" />
