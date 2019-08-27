@@ -2032,18 +2032,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Guest (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
-      propertyPath: DislikedTracks.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
-      propertyPath: DislikedTracks.Array.data[0]
-      value: Pads
-      objectReference: {fileID: 0}
-    - target: {fileID: 844830289, guid: fe35a3ed23fc6b6428e870631cc87443, type: 3}
-      propertyPath: DislikedTracks.Array.data[1]
-      value: ExtraBeat
-      objectReference: {fileID: 0}
     - target: {fileID: 1754436285812051730, guid: fe35a3ed23fc6b6428e870631cc87443,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\Audio\SongyPart.cs" />
     <Compile Include="Assets\Scripts\Audio\SongyPartClip.cs" />
     <Compile Include="Assets\Scripts\Audio\SongySong.cs" />
+    <Compile Include="Assets\Scripts\AudioLaggCode.cs" />
     <Compile Include="Assets\Scripts\Carriable.cs" />
     <Compile Include="Assets\Scripts\Mechanics\Guest.cs" />
     <Compile Include="Assets\Scripts\Mechanics\GuestManager.cs" />

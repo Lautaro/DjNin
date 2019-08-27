@@ -64,6 +64,12 @@ public partial class SongySong : MonoBehaviour
         clip.source.volume = volume;
     }
 
+    public float GetClipVolume(string clipName)
+    {
+        var clip = GetClipByName(clipName);
+        return clip.source.volume;
+    }
+
     public void SetMainVolume(float volume)
     {
         MainVolume = volume;
@@ -95,23 +101,6 @@ public partial class SongySong : MonoBehaviour
         }
 
         throw new Exception("Could not find clip named : " + clipName);
-    }
-
-    public void SetSongyClipVolume(string clipName)
-    {
-        var allClips = GetClipByName(clipName);
-
-        foreach (var songyClip in GetAllClipsInSongy())
-        {
-            if (songyClip.source.volume > 0)
-            {
-                songyClip.source.volume = 0f;
-            }
-            else
-            {
-                songyClip.source.volume = 1f;
-            }
-        }
     }
 
     List<SongyClip> GetAllClipsInSongy()

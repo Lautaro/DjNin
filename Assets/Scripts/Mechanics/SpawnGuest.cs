@@ -55,7 +55,7 @@ public class SpawnGuest
             returnList.Add(track.ToString());
         }
 
-        guest.DislikedTracks = returnList;
+        guest.FavouriteTracks = returnList;
     }
 
     private void RandomDislikedTracks(Guest guest)

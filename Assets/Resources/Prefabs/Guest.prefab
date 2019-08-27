@@ -55,7 +55,9 @@ MonoBehaviour:
   - Bass
   - Chords
   - BasicBeat
-  DislikedTracks: []
+  DislikedTracks:
+  - Pads
+  - ExtraBeat
 --- !u!1 &1094920756141365058
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +94,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.29, y: 1.03}
+  m_AnchoredPosition: {x: 1.08, y: 1.03}
   m_SizeDelta: {x: 3.18, y: 0.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &6075133472299585656
@@ -200,8 +202,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 1.78
-  m_fontSizeBase: 1.78
+  m_fontSize: 1.5
+  m_fontSizeBase: 1.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -585,7 +587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.43, y: 1.03}
+  m_AnchoredPosition: {x: -1.27, y: 1.03}
   m_SizeDelta: {x: 3.18, y: 0.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &834322434796902125
@@ -693,8 +695,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 1.78
-  m_fontSizeBase: 1.78
+  m_fontSize: 1.5
+  m_fontSizeBase: 1.5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
