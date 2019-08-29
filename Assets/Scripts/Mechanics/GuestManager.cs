@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -9,40 +10,72 @@ public class GuestManager : MonoBehaviour
     // Start is called before the first frame update
     public Dictionary<string, float> ActiveTracks;
     public List<Guest> Guests;
-    public float SatisfactionBoost;
-    public float SatisfactionDamage;
+   
     SpawnGuest guestSpawner;
+    GameObject guestContainer;
+    int plannedNewGuests = 0;
 
-    void Start() 
+    #region variables
+    float guestSpawnCooldownSpanInSeconds = 1f;
+    DateTime guestSpawnCooldownTimer;
+    int minAmountOfGuests = 1;
+    int maxAmountOfGuests = 3;
+
+    float danceFlorSize = 6f;
+
+    float SatisfactionBoost = 0.05f;
+    float SatisfactionDamage = 0.05f;
+    #endregion
+
+    void Start()
     {
+        guestContainer = transform.root.Find("/Game/Guests").gameObject;
         guestSpawner = new SpawnGuest();
-
-        if (Guests == null)
-        {
-            Guests = new List<Guest>();
-        }
 
         ActiveTracks = new Dictionary<string, float>();
         InvokeRepeating("SlowUpdate", 0, 0.3f);
+
+        ResetGuestCooldownTimer();
     }
 
     void SlowUpdate()
     {
         ActiveTracks = MusicManager.Instance.songySong.GetPlayingTracks();
-       
+        Guests = GetAllGuests();
+        HandleGuestAmount();
     }
 
-    void SpawnNewGuests(int amount)
+    private void HandleGuestAmount()
     {
-        var parentTransform = transform.root.Find("/Game/Guests").transform;
-        var newGuests = guestSpawner.SpawnGuests(2, parentTransform);
+        var count = Guests.Count();
+
+        if (maxAmountOfGuests > (count + plannedNewGuests))
+        {
+            if (DateTime.Now > guestSpawnCooldownTimer)
+            {
+                Invoke("AddGuest", new System.Random().Next(2, 6));
+                plannedNewGuests++;
+                ResetGuestCooldownTimer();
+            }
+        }
     }
 
-    void AddGuests(List<Guest> guests)
+    void ResetGuestCooldownTimer()
     {
-        Guests.AddRange(guests);
+        guestSpawnCooldownTimer = DateTime.Now.AddSeconds(guestSpawnCooldownSpanInSeconds);
     }
 
+    List<Guest> GetAllGuests()
+    {
+        return guestContainer.GetComponentsInChildren<Guest>().ToList();
+    }
+
+    void AddGuest()
+    {
+        var randomSpawnPoint = UnityTools.GetRandomWithinBounds(new Bounds(guestContainer.transform.position,UnityTools.GetSymmetricalVector( danceFlorSize)));
+        guestSpawner.SpawnGuests(1, guestContainer.transform, randomSpawnPoint);
+        plannedNewGuests--;
+    }
 
 
     // Update is called once per frame
@@ -77,8 +110,8 @@ public class GuestManager : MonoBehaviour
                 }
             }
 
-            // IF SATISFACTION MOD IS NOT POSITIVE IT SHOULDBE NEGATIVE
-            if (satisfactionMod <= 0)
+            // IF NOTHING IS PLAYING MOD SHOULD BE NEGATIVE
+            if (ActiveTracks.Count == 0)
             {
                 satisfactionMod = -SatisfactionDamage;
             }

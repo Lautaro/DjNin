@@ -20,13 +20,14 @@ public class SpawnGuest
         guestPrefab = Resources.Load<GameObject>(prefabFolderPath + "\\Guest");
     }
 
-    public List<Guest> SpawnGuests (int amount, Transform parent)
+    public List<Guest> SpawnGuests (int amount, Transform parent, Vector3 position)
     {
         var guests = new List<Guest>();
 
         for (int i = 0; i < amount; i++)
         {
             var guestGo = GameObject.Instantiate(guestPrefab, new Vector3(0, 0, 0), Quaternion.identity, parent);
+            guestGo.transform.position = position;
             var guest = guestGo.GetComponent<Guest>();
 
             RandomFavTracks(guest);

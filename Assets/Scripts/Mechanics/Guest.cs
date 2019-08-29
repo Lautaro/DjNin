@@ -9,7 +9,7 @@ public class Guest : MonoBehaviour
     public TextMeshPro satisfactionUI;
     public TextMeshPro favTracksUI;
     public TextMeshPro dislikedTracksUI;
-    public float Satisfaction = 50;
+    public float Satisfaction = 70;
     public List<string> FavouriteTracks;
     public List<string> DislikedTracks;
     // Start is called before the first frame update
